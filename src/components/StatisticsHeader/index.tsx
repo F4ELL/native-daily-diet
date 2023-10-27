@@ -9,9 +9,10 @@ import { useNavigation } from '@react-navigation/native';
 type Props = {
   title: string
   subtitle: string
+  variant?: string 
 }
 
-export function StatisticsHeader({ title, subtitle }: Props) {
+export function StatisticsHeader({ title, subtitle, variant = "positive" }: Props) {
   const { COLORS } = useTheme()
   const { goBack } = useNavigation()
 
@@ -22,7 +23,7 @@ export function StatisticsHeader({ title, subtitle }: Props) {
   return (
     <Container 
       style={{ paddingTop }}
-      bgColor="positive"
+      bgColor={variant}
     >
       <BackButton 
         style={{ top: paddingTop }}
@@ -30,7 +31,7 @@ export function StatisticsHeader({ title, subtitle }: Props) {
       >
         <ArrowLeft 
           size={24}
-          color={COLORS.GREEN_DARK}
+          color={variant === "positive" ? COLORS.GREEN_DARK : COLORS.RED_DARK}
         />
       </BackButton>
 

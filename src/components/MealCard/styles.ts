@@ -24,7 +24,7 @@ export const Separator = styled.View`
   background-color: ${({ theme }) => theme.COLORS.GRAY_400};
 `
 
-export const Description = styled.Text`
+export const Title = styled.Text`
   flex: 1;
 
   font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
